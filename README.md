@@ -1,1 +1,7 @@
-# YARA
+# MailSafe
+
+The MailSafe is a Phishing Email Detector and web-based application designed to help users identify phishing attempts in email content. As phishing attacks via email have become increasingly common, this tool allows users to paste their email content into the application and analyze it for potential phishing indicators. The tool leverages Natural Language Processing (NLP) to analyze the text of the email, searching for patterns and deceptive language often found in phishing attempts. Additionally, it inspects any URLs present in the email, checking them for known malicious or suspicious websites. Based on these analyses, the tool assigns a phishing score to the email and provides users with recommendations to improve their email safety.
+
+The application offers a simple, user-friendly interface where users can paste email content and receive immediate feedback about the likelihood of phishing. The phishing score helps users assess the severity of the risks, while the recommendations provide insights on how to protect themselves from such threats in the future.
+
+The tool uses Python with Flask (or Django) for the backend, along with HTML, CSS, and JavaScript for the frontend. It integrates NLP libraries like spaCy or NLTK to analyze the content, and Python libraries such as requests or BeautifulSoup for URL inspection. The application can be easily deployed on cloud platforms like Heroku, AWS, or DigitalOcean.
