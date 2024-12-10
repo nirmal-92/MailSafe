@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Analysis Result</h2>
+<p><strong>Strength:</strong> {{ result.strength }}</p>
+<p><strong>Score:</strong> {{ result.score }}</p>
+
+{% if result.suspicious_urls %}
+<h3>Suspicious URLs:</h3>
+<ul>
+    {% for url in result.suspicious_urls %}
+    <li>{{ url }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<a href="/">Back to Home</a>
+{% endblock %}
