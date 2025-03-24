@@ -1,16 +1,26 @@
-{% extends "base.html" %}
-{% block content %}
-<h2>Analysis Result</h2>
-<p><strong>Strength:</strong> {{ result.strength }}</p>
-<p><strong>Score:</strong> {{ result.score }}</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Result</h1>
+        <p><strong>Risk Level:</strong> <span class="risk">{{ risk_level }}</span></p>
+        <p><strong>Suspicious Score:</strong> {{ score }}</p>
 
-{% if result.suspicious_urls %}
-<h3>Suspicious URLs:</h3>
-<ul>
-    {% for url in result.suspicious_urls %}
-    <li>{{ url }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-<a href="/">Back to Home</a>
-{% endblock %}
+        {% if matched_keywords %}
+            <p><strong>Matched Keywords:</strong> {{ matched_keywords|join(", ") }}</p>
+        {% endif %}
+
+        {% if suspicious_urls %}
+            <p><strong>Suspicious URLs:</strong> {{ suspicious_urls|join(", ") }}</p>
+        {% endif %}
+
+        <a href="/">🔄 Analyze Another Email</a>
+    </div>
+</body>
+</html>

@@ -1,7 +1,19 @@
-{% extends "base.html" %}
-{% block content %}
-<form method="POST">
-    <textarea name="email_content" placeholder="Paste email content here..." rows="10" required></textarea>
-    <button type="submit">Analyze</button>
-</form>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Email Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Phishing Email Detector</h1>
+        <p>Paste the email content below and check if it is safe or a phishing attempt.</p>
+        <form action="/analyze" method="POST">
+            <textarea name="email_content" id="emailContent" placeholder="Paste the email content here..."></textarea>
+            <button type="submit">Analyze</button>
+        </form>
+    </div>
+</body>
+</html>
